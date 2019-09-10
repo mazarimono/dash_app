@@ -234,7 +234,7 @@ intro = html.Div(
                         html.Div(
                             [
                                 html.Img(
-                                    src="assets/chomoku-logo2.PNG",
+                                    src="assets/chomoku-logo2.png",
                                     style={"width": "20%", "marginLeft": "75%"},
                                 ),
                                 html.P("Dashとオープンデータで", style={"textAlign": "center"}),
@@ -1146,7 +1146,7 @@ about_dash = html.Div(
             )
 
             コールバックの作成
-            
+
             @app.callback(Output("hello-graph-callback", "children"),       
                         \[Input("hello-graph", "hoverData")\]\)         
             def hello_graph_callback(hoverData):      
