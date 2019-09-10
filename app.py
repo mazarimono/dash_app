@@ -1101,7 +1101,8 @@ about_dash = html.Div(
                                                             "height": 600,
                                                         },
                                                     },
-                                                )
+                                                ),
+                                                html.Div(id="hello-graph-callback", style={"fontSize":30}),
                                             ],
                                             style={"width": "70%", "margin": "auto"},
                                         ),
@@ -1111,7 +1112,7 @@ about_dash = html.Div(
                         ),
                         html.Div(
                             [
-                                html.P("上のアプリケーションとグラフ", style={"fontSize": 30}),
+                                html.P("上のアプリケーションのコード", style={"fontSize": 30}),
                                 dcc.Markdown(
                                     """
 
@@ -1120,6 +1121,8 @@ about_dash = html.Div(
             import dash_html_components as html     
 
             app = dash.Dash()
+
+            レイアウトの作成
 
             app.layout = html.Div(
 
@@ -1138,8 +1141,17 @@ about_dash = html.Div(
                             "layout": {"title": "Dash DataViz", "height": 800},
                         },
                     ),
+                    html.Div(id="hello-graph-callback", style={"fontSize":30}),
                 ]
             )
+
+            コールバックの作成
+            
+            @app.callback(Output("hello-graph-callback", "children"),       
+                        \[Input("hello-graph", "hoverData")\]\)         
+            def hello_graph_callback(hoverData):      
+
+                return json.dumps(hoverData)     
 
             app.run_server(debug=True)
 
@@ -1166,7 +1178,7 @@ about_dash = html.Div(
                         html.Div(
                             [
                                 html.Div(
-                                    [html.P("グラフモジュールとコールバックの話", style=title_font)],
+                                    [html.P("グラフモジュールの話", style=title_font)],
                                     style=title_style,
                                 ),
                                 html.Div(
@@ -1640,6 +1652,11 @@ about_dash = html.Div(
     ]
 )
 
+# hello-callback
+@app.callback(Output("hello-graph-callback", "children"),
+            [Input("hello-graph", "hoverData")])
+def hello_graph_callback(hoverData):
+    return json.dumps(hoverData)
 
 # kakei callbacks
 
