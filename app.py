@@ -2787,5 +2787,5 @@ def diplay_page(pathname):
     else:
         return index_page
 
-
-app.run_server(debug=True)
+if __name__ == "__main__":
+    app.run_server(debug=True)
