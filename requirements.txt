@@ -8,7 +8,7 @@ dash_bio
 plotly
 pandas
 numpy
-skimage
+scikit_image
 six
 gunicorn
 lxml
