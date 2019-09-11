@@ -215,6 +215,11 @@ index_page = html.Div(
         html.Div(
             [dcc.Link("4. epilogue", href="/epilogue", style=index_link_style)]
         ),
+        html.Div([
+            html.P("今日の資料: https://pyconjp.herokuapp.com", style=index_link_style),
+            html.P("Today's Material: http://pyconjp-en/herokuapp.com", style=index_link_style),
+            html.P("twitter: @ogawahideyuki", style=index_link_style)
+        ])
     ],
     style={"fontSize": 50},
 )
@@ -2345,6 +2350,7 @@ economic_side = html.Div(
                                 - [全国消費実態調査](https://www.e-stat.go.jp/stat-search/database?page=1&layout=normal&toukei=00200564&survey=%E6%B6%88%E8%B2%BB%E5%AE%9F%E6%85%8B%E8%AA%BF%E6%9F%BB&result_page=1)
                                 - [法人企業統計](https://www.e-stat.go.jp/dbview?sid=0003060791)
                                 - [毎月勤労統計調査　全国調査 就業形態別現金給与総額　指数及び増減率](https://www.e-stat.go.jp/dbview?sid=0003138239)
+                                - [OECD (2019), Average annual wages](https://stats.oecd.org/Index.aspx?DataSetCode=AV_AN_WAGE)
                                 """,
                                     style={"fontSize": 50, "margin": "5%"},
                                 ),
@@ -2398,38 +2404,7 @@ economic_side = html.Div(
                                                     },
                                                 ),
                                                 dcc.Graph(id="jittai_graph"),
-                                                # html.Div(
-                                                #     [
-                                                #         # 国際的な給与水準
-                                                #         html.H3(
-                                                #             "国際的な給与の推移（米ドル建て　1990年～）",
-                                                #             style={
-                                                #                 "textAlign": "center",
-                                                #                 "backgroundColor": "#fbffb9",
-                                                #             },
-                                                #         ),
-                                                #         html.Div(
-                                                #             [
-                                                #                 dcc.Checklist(
-                                                #                     id="oecd_wage_checklist",
-                                                #                     options=[
-                                                #                         {
-                                                #                             "label": i,
-                                                #                             "value": i,
-                                                #                         }
-                                                #                         for i in oecd_annual_wage[
-                                                #                             "Country"
-                                                #                         ].unique()
-                                                #                     ],
-                                                #                     value=["Japan"],
-                                                #                 )
-                                                #             ],
-                                                #             style={
-                                                #                 "width": "50%",
-                                                #                 "margin": "auto",
-                                                #             },
-                                                #         ),
-                                                #         dcc.Graph(id="oecd_wage_graph"),
+
                                                 #         # 国際的な生産性
                                                 #         html.H3(
                                                 #             "国際的な生産性の推移（2010 : 100）",
@@ -2552,6 +2527,43 @@ economic_side = html.Div(
                                                         ),
                                                     ]
                                                 ),
+                                                html.Div([
+                                                     html.Div(
+                                                    [
+                                                        # 国際的な給与水準
+                                                        html.H3(
+                                                            "国際的な給与の推移（米ドル建て　1990年～）",
+                                                            style={
+                                                                "textAlign": "center",
+                                                                "backgroundColor": "#fbffb9",
+                                                            },
+                                                        ),
+                                                        html.Div(
+                                                            [
+                                                                dcc.Checklist(
+                                                                    id="oecd_wage_checklist",
+                                                                    options=[
+                                                                        {
+                                                                            "label": i,
+                                                                            "value": i,
+                                                                        }
+                                                                        for i in oecd_annual_wage[
+                                                                            "Country"
+                                                                        ].unique()
+                                                                    ],
+                                                                    value=["Japan"],
+                                                                )
+                                                            ],
+                                                            style={
+                                                                "width": "50%",
+                                                                "margin": "auto",
+                                                            },
+                                                        ),
+                                                        dcc.Graph(id="oecd_wage_graph"),
+                                                        html.P("データソース: OECD (2019), Average annual wages, OECD Employment and Labour Market Statistics (database), https://doi.org/10.1787/data-00571-en (アクセスした日時 09 September 2019)")
+                                                        ]),
+
+                                                ]),
                                             ],
                                             style={"width": "90%", "margin": "auto"},
                                         )
