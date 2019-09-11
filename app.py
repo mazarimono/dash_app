@@ -213,7 +213,7 @@ index_page = html.Div(
             ]
         ),
         html.Div(
-            [dcc.Link("4. Conclusion", href="/conclusion", style=index_link_style)]
+            [dcc.Link("4. epilogue", href="/epilogue", style=index_link_style)]
         ),
     ],
     style={"fontSize": 50},
@@ -288,7 +288,7 @@ intro = html.Div(
                                 ),
                                 html.Div(
                                     [
-                                        html.P("名前: 小川 英幸"),
+                                        html.P("名前: 小川 英幸　@ogawahideyuki"),
                                         html.P("会社: 合同会社 長目（ちょうもく）"),
                                         html.P("資格: 証券アナリスト"),
                                         html.P("頑張ってること: 禁酒"),
@@ -371,7 +371,6 @@ intro = html.Div(
                             [
                                 dcc.Markdown(
                                     """
-                - 自己紹介
                 - 経済クイズ
                 - 可視化分析フレームワークDash
                     - インタラクティブな可視化により多くのデータが見れる
@@ -1033,17 +1032,18 @@ about_dash = html.Div(
                                 ),
                                 dcc.Markdown(
                                     """
-                - Dashとは分析ウェブフレームワークです。
-                    - Pythonのみで書けます。
-                    - Flask、plotly.js、react.jsで作られています。
+                - Dashは分析ウェブフレームワーク
+                    - Pythonのみで書ける
+                    - Flask、plotly.js、react.jsで作られている
                     - [Document](https://dash.plot.ly/)
 
-                - インタラクティブにデータが可視化できます。
-                    - たくさんのデータが見れるようになります
+                - インタラクティブにデータが可視化、共有できる
+                    - たくさんのデータが見れる
+                    - そのデータを共有できる
                 
-                - グラフ以外にもさまざまなコンポーネントが作成されています
-                    - Dash_table、Dash_Canvas、Dash-Bioなどがあります。
-                    - 自作できます。
+                - グラフ以外にもさまざまなコンポーネントが存在する
+                    - Dash_table、Dash_Canvas、Dash-Bioなどがある
+                    - 自作できる
 
                 """,
                                     style={"fontSize": 50, "margin": "5%"},
@@ -2047,11 +2047,11 @@ economic_side = html.Div(
                                 ),
                                 dcc.Markdown(
                                     """
-                - Dashを使って日本経済を可視化します。
+                - Dashを使って日本経済を可視化
                     - 日本の道路は安全になった。
                     - 気になる！お隣さんのお財布事情！
                 
-                - オープンデータを利用します。
+                - オープンデータを利用
                     - 特定のデータが、一切の著作権、特許など制御メカニズムの制限なしで、全ての人が望むように利用・再掲載できるべきであるというアイデア（[via Wikipedia](https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%83%87%E3%83%BC%E3%82%BF)）。
                     - 官民データ活用推進基本法（平成28年法律第103号）において、国及び地方公共団体はオープンデータに取り組むことが義務付けられた([政府CIOポータル](https://cio.go.jp/policy-opendata))。
                     - 日本の統計偽装の問題。
@@ -2062,7 +2062,7 @@ economic_side = html.Div(
                                 html.Div(
                                     [
                                         html.H4(
-                                            "たとえば犬の登録申請数なんてのもあります",
+                                            "たとえば犬の登録申請数なんてのもある",
                                             style={"textAlign": "center"},
                                         ),
                                         dcc.Graph(
@@ -2335,10 +2335,11 @@ economic_side = html.Div(
                                 ),
                                 dcc.Markdown(
                                     """
-                                - 案外、人の財布の状況ってわかりません。
-                                - 自分の財布の状況もどうなっているか知らない人もいるみたいです。
-                                - そこで日本人のお財布状況はどうなっているのか見てみます。
-                                - ついでに企業のデータもみましょう。
+                                - 案外、人の財布の状況って知らない
+                                - 自分の財布の状況もどうなっているか知らない人もいる
+                                - そこで日本人のお財布状況はどうなっているのか調査
+                                - ついでに企業のデータも調査
+                                - お給料のデータも調査
                                 
                                 ### 扱うデータ
                                 - [全国消費実態調査](https://www.e-stat.go.jp/stat-search/database?page=1&layout=normal&toukei=00200564&survey=%E6%B6%88%E8%B2%BB%E5%AE%9F%E6%85%8B%E8%AA%BF%E6%9F%BB&result_page=1)
@@ -2558,7 +2559,7 @@ economic_side = html.Div(
                                 ),
                                 back_to_index,
                                 html.Div(
-                                    [dcc.Link("go to conclusion", href="/conclusion")],
+                                    [dcc.Link("go to epilogue", href="/epilogue")],
                                     style={
                                         "fontSize": 30,
                                         "textAlign": "right",
@@ -2744,15 +2745,15 @@ def update_output(list_of_contents, list_of_names, list_of_dates):
 
 # 結論ページ
 
-conclusion = html.Div(
+epilogue = html.Div(
     [
-        html.Div([html.Div([html.H1("結論", style=title_font)], style=title_style)]),
+        html.Div([html.Div([html.H1("エピローグ", style=title_font)], style=title_style)]),
         html.Div(
             [
                 dcc.Markdown(
                     """
                     [SUBSRU総監督吼える　「9割の人は運転がヘタ」](https://business.nikkei.com/atcl/seminar/19/00105/00048/?P=4&mds)     
-                    
+
                     質: 「運転のうまいヘタ」って何でしょう。辰巳さんはどこを見てそうおっしゃっているのですか。判断基準を教えてください。     
 
                     辰: それは人をいたわるかどうかですよ。ヘタな人は、歩行者とか自動車とか、弱者をいたわらない。テクニックじゃないんです。クルマで道路を走る上で一番大事なところは、他者をいたわる気持ちです。今、日本でいろいろな問題が起きていますが、そういう教育ができていないからですよ。そもそも「運転教育」って今まで誰もしたことがないでしょう。
@@ -2799,8 +2800,8 @@ def diplay_page(pathname):
         return about_dash
     elif pathname == "/about-japanese-economy":
         return economic_side
-    elif pathname == "/conclusion":
-        return conclusion
+    elif pathname == "/epilogue":
+        return epilogue
     else:
         return index_page
 
