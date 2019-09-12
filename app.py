@@ -1048,7 +1048,7 @@ about_dash = html.Div(
                     - そのデータを共有できる
                 
                 - グラフ以外にもさまざまなコンポーネントが存在する
-                    - Dash_table、Dash_Canvas、Dash-Bioなどがある
+                    - Dash_table、Dash_Canvas、Dash_Bioなどがある
                     - 自作できる
 
                 """,
@@ -1496,7 +1496,7 @@ about_dash = html.Div(
                         html.Div(
                             [
                                 html.Div(
-                                    [html.H1("データ分析から得られた知識の共有", style=title_font)],
+                                    [html.H1("Dashを使い、詳細なデータを共有し、データ分析をより深いレベルで行う", style=title_font)],
                                     style=title_style,
                                 ),
                                 html.Div(
@@ -1523,9 +1523,9 @@ about_dash = html.Div(
                                 html.Div(
                                     [
                                         html.P(
-                                            "その隔たり、Dashを使うと埋められます!",
+                                            "Dashで詳細なデータを共有してその隔たりを埋め、データの理解を深化させましょう!",
                                             style={
-                                                "fontSize": 60,
+                                                "fontSize": 40,
                                                 "textAlign": "center",
                                                 "backgroundColor": "#fbffb9",
                                                 "padding": 10,
@@ -1620,7 +1620,7 @@ about_dash = html.Div(
                                                             """
                         - 情報量が増えるとわかることも増える
                         - もっと掘り下げたいところが分かる
-                        ### ギャップが埋まり、分析がはかどる！！！！
+                        ### 顧客と分析者の隔たりが埋まり、データの理解が深まり、データ分析の効果が上昇する
                         """,
                                                             style=mkd_style,
                                                         )
@@ -1714,8 +1714,8 @@ def update_chart(value1, value2, radiovalue):
                 """
             plotly.graph_objectsでグラフを描く場合     
 
-            {"data": [go.Scatter(x=dff1\[\"value"\], y=dff2\[\"value"\],  mode="markers")],
-                "layout": go.Layout(height=600, xaxis={"title": value1}, yaxis={"title": value2})}
+            {"data": [go.Scatter(x=dff1\[\"value"\], y=dff2\[\"value"\],  mode="markers")],     
+                "layout": go.Layout(height=600, xaxis={"title": value1}, yaxis={"title": value2})}     
 
             [データソース: e-Stat 家計調査](https://www.e-stat.go.jp/stat-search?page=1&toukei=00200561&survey=%E5%AE%B6%E8%A8%88%E8%AA%BF%E6%9F%BB)
             """,
@@ -1746,8 +1746,8 @@ def update_chart(value1, value2, radiovalue):
                 """
             Dashでグラフを描く場合    
 
-            {"data": [{"x": dff1\[\"value"\], "y":dff2\[\"value"\], "mode":"markers"}],
-                "layout": {"height": 600, "xaxis": {"title": value1}, "yaxis":{"title": value2}}}
+            {"data": [{"x": dff1\[\"value"\], "y":dff2\[\"value"\], "mode":"markers"}],     
+                "layout": {"height": 600, "xaxis": {"title": value1}, "yaxis":{"title": value2}}}      
 
             [データソース: e-Stat 家計調査](https://www.e-stat.go.jp/stat-search?page=1&toukei=00200561&survey=%E5%AE%B6%E8%A8%88%E8%AA%BF%E6%9F%BB)
             """,
@@ -2055,7 +2055,7 @@ economic_side = html.Div(
                                 dcc.Markdown(
                                     """
                 - Dashを使って日本経済を可視化
-                    - 日本の道路は安全になった。
+                    - 日本の道路は安全になった。（今日は話しません！）
                     - 気になる！お隣さんのお財布事情！
                 
                 - オープンデータを利用
