@@ -213,7 +213,7 @@ index_page = html.Div(
             ]
         ),
         html.Div(
-            [dcc.Link("4. epilogue", href="/epilogue", style=index_link_style)]
+            [dcc.Link("4. Epilogue", href="/epilogue", style=index_link_style)]
         ),
         html.Div([
             html.P("今日の資料: https://pyconjp.herokuapp.com", style=index_link_style),
@@ -378,6 +378,7 @@ intro = html.Div(
                                     """
                 - 経済クイズ
                 - 可視化分析フレームワークDash
+                    - 今日のプレゼンテーション資料はDashで作成
                     - インタラクティブな可視化により多くのデータが見れる
                     - データの分析、監視、報告がこれひとつでできる
                 - 日本経済
@@ -466,7 +467,7 @@ intro = html.Div(
 
                 3.  30％以上減少した　
 
-                [データソース:　e-Stat 運輸省　自動車輸送統計月報](https://www.e-stat.go.jp/stat-search/files?page=1&layout=datalist&toukei=00600330&kikan=00600&tstat=000001017236&cycle=1&year=20190&month=11010303&stat_infid=000031848511&result_back=1&result_page=1&tclass1val=0)
+                [データソース:　e-Stat 国土交通省　自動車輸送統計月報](https://www.e-stat.go.jp/stat-search/files?page=1&layout=datalist&toukei=00600330&kikan=00600&tstat=000001017236&cycle=1&year=20190&month=11010303&stat_infid=000031848511&result_back=1&result_page=1&tclass1val=0)
                 """,
                                     style=mkd_style,
                                 )
@@ -945,7 +946,7 @@ def ken_gdp_show(clickData, n_clicks):
             ],
             "layout": go.Layout(
                 xaxis={"tickfont": {"size": 30}},
-                title={"text": "{}年のGDPの状態".format(click_year), "font": {"size": 35}},
+                title={"text": "各都道府県の{}年のGDPの成長率".format(click_year), "font": {"size": 35}},
             ),
         }
 
@@ -957,7 +958,7 @@ def ken_gdp_show(clickData, n_clicks):
             ],
             "layout": go.Layout(
                 xaxis={"tickfont": {"size": 30}},
-                title={"text": "{}年のGDPの状態".format(click_year), "font": {"size": 35}},
+                title={"text": "各都道府県の{}年のGDPの状態".format(click_year), "font": {"size": 35}},
             ),
         }
 
@@ -1117,7 +1118,7 @@ about_dash = html.Div(
                         ),
                         html.Div(
                             [
-                                html.P("上のアプリケーションのコード", style={"fontSize": 30}),
+                                html.P("コード", style={"fontSize": 30}),
                                 dcc.Markdown(
                                     """
 
@@ -1127,7 +1128,7 @@ about_dash = html.Div(
 
             app = dash.Dash()
 
-            レイアウトの作成
+            \# レイアウトの作成
 
             app.layout = html.Div(
 
@@ -1150,7 +1151,7 @@ about_dash = html.Div(
                 ]
             )
 
-            コールバックの作成
+            \# コールバックの作成
 
             @app.callback(Output("hello-graph-callback", "children"),       
                         \[Input("hello-graph", "hoverData")\]\)         
@@ -1273,7 +1274,7 @@ about_dash = html.Div(
                         html.Div(
                             [
                                 html.Div(
-                                    [html.H1("インタラクティブな可視化のサンプル", style=title_font)],
+                                    [html.H1("各コンポーネントを使ったアプリケーション", style=title_font)],
                                     style=title_style,
                                 ),
                                 # Dash_canvas
@@ -1495,21 +1496,22 @@ about_dash = html.Div(
                         html.Div(
                             [
                                 html.Div(
-                                    [html.H1("データ分析の共有に関して", style=title_font)],
+                                    [html.H1("データ分析から得られた知識の共有", style=title_font)],
                                     style=title_style,
                                 ),
                                 html.Div(
                                     [
                                         html.P(
-                                            "データ分析の問題点: データ分析に対する認識の隔たり",
-                                            style={"fontSize": 50},
+                                            "データ分析の問題点: データ分析に対する理解の隔たりとデータ分析結果の共有の難しさ",
+                                            style={"fontSize": 40},
                                         ),
                                         dcc.Markdown(
                                             """
-                    # 事例（想像上）
+                    ### 事例（想像上）
+                    - データ分析に関して
                         - 依頼側: 人工知能がチャーっとすぐに効果が！！
-                        - 実際:　業務のドメイン知識など協力が必要
-
+                        - 分析側:　業務のドメイン知識の共有など協力が必要
+                    ― 結果などの共有
                         - 分析側: 依頼者にしっかり報告しましたよ！
                         - 依頼側: 見たいデータがなかった・・・
                     """,
@@ -1521,7 +1523,7 @@ about_dash = html.Div(
                                 html.Div(
                                     [
                                         html.P(
-                                            "その認識の隔たり、Dashを使うと埋められます!",
+                                            "その隔たり、Dashを使うと埋められます!",
                                             style={
                                                 "fontSize": 60,
                                                 "textAlign": "center",
@@ -1616,7 +1618,7 @@ about_dash = html.Div(
                                                     [
                                                         dcc.Markdown(
                                                             """
-                        - 情報量が増えると会話も弾む
+                        - 情報量が増えるとわかることも増える
                         - もっと掘り下げたいところが分かる
                         ### ギャップが埋まり、分析がはかどる！！！！
                         """,
@@ -2281,8 +2283,7 @@ economic_side = html.Div(
                                             [
                                                 dcc.Markdown(
                                                     """
-                    - 高齢化先進国がそれではいけない。
-                    - しいてはその辺りの解決が、自動車事故による死者をゼロにすることにつながるのかもしれない。
+                    - この問題の解決が、自動車事故による死者をゼロにすることにつながるのかもしれない。
                     - しかし、以下に示すように、巷に言われるように老人の事故が多いとかそういうのはない。
 
 
@@ -2764,16 +2765,17 @@ epilogue = html.Div(
             [
                 dcc.Markdown(
                     """
-                    [SUBSRU総監督吼える　「9割の人は運転がヘタ」](https://business.nikkei.com/atcl/seminar/19/00105/00048/?P=4&mds)     
+                    [SUBARU総監督吼える　「9割の人は運転がヘタ」](https://business.nikkei.com/atcl/seminar/19/00105/00048/?P=4&mds)     
 
-                    質: 「運転のうまいヘタ」って何でしょう。辰巳さんはどこを見てそうおっしゃっているのですか。判断基準を教えてください。     
+                    質問者: 「運転のうまいヘタ」って何でしょう。辰巳さんはどこを見てそうおっしゃっているのですか。判断基準を教えてください。     
 
-                    辰: それは人をいたわるかどうかですよ。ヘタな人は、歩行者とか自動車とか、弱者をいたわらない。テクニックじゃないんです。クルマで道路を走る上で一番大事なところは、他者をいたわる気持ちです。今、日本でいろいろな問題が起きていますが、そういう教育ができていないからですよ。そもそも「運転教育」って今まで誰もしたことがないでしょう。
+                    辰巳さん: それは人をいたわるかどうかですよ。ヘタな人は、歩行者とか自転車とか、弱者をいたわらない。テクニックじゃないんです。クルマで道路を走る上で一番大事なところは、他者をいたわる気持ちです。今、日本でいろいろな問題が起きていますが、そういう教育ができていないからですよ。そもそも「運転教育」って今まで誰もしたことがないでしょう。
                     
                     
                     """,
                     style=mkd_style,
-                )
+                ),
+                html.Div(html.H3("私はこの話はデータ分析にも当てはまることだと思います。", style={"textAlign":"center"})),
             ],
             style=mkd_outside_style,
         ),
