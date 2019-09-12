@@ -272,7 +272,7 @@ intro = html.Div(
                     selected_style=tab_selected_style,
                     children=[
                         html.Div(
-                            [html.H1("自己紹介", style=title_font)], style=title_style
+                            [html.H1("こんにちは！", style=title_font)], style=title_style
                         ),
                         html.Div(
                             [
